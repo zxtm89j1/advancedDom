@@ -55,6 +55,28 @@ btnScrollTo.addEventListener('click', function (e) {
 
 // Lectures
 
+// rgb(255, 255, 255)
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  console.log('LINK');
+  this.style.backgroundColor = randomColor();
+
+  // Stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {});
+
+/*
 const h1 = document.querySelector('h1');
 // h1.addEventListener('mouseenter', function (e) {
 //   alert('addEventListener: Great! You are reading the heading! :D');
@@ -75,7 +97,7 @@ setTimeout(() => {
 //   alert('onmouseenter: Great! You are reading the heading! :D');
 // };
 
-/*
+
 console.log(document.documentElement);
 console.log(document.head);
 
