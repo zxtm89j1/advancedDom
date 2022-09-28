@@ -30,6 +30,29 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+
+  console.log(e.target.getBoundingClientRect());
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+/*
 // Lectures
 
 console.log(document.documentElement);
@@ -84,3 +107,4 @@ document.documentElement.style.setProperty('--color-primary', 'orangered');
 // Attributes
 const logo = document.querySelector('.nav__logo');
 console.log(logo.src);
+*/
